@@ -3,8 +3,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup as bs
 from time import sleep
+from os import getcwd
 
-path_driver = '/home/dopel/codeInTest/tmp_testing/Wed-2022-03-09/geckodriver'
+path_driver = getcwd() + '/geckodriver'
 
 driver = webdriver.Firefox(executable_path=path_driver)
 
