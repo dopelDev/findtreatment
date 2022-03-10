@@ -16,20 +16,23 @@ element_location.click()
 element_location.send_keys('10019')
 sleep(1)
 element_location.send_keys(Keys.ENTER)
-sleep(2)
+sleep(1)
 
 #button location
 button = driver.find_element(By.XPATH, '/html/body/div/div/main/div[3]/div/div/div/form/button')
 button.click()
-sleep(2)
+sleep(1)
 
 # Distance
-sleep(2)
+sleep(1)
 element_distance = driver.find_element(By.ID, 'distance')
 element_distance.send_keys(Keys.ARROW_DOWN)
 element_distance.send_keys(Keys.ARROW_DOWN)
 element_distance.click()
+sleep(6)
 
 # BeautifulSoup4
-soup = bs(driver.page_source, 'html_parser')
-soup.prettify()
+soup = bs(driver.page_source, 'html.parser')
+file_object = open('search.html', mode='w')
+file_object.writelines(soup.prettify())
+file_object.close()
